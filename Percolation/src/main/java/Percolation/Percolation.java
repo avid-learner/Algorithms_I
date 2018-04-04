@@ -47,12 +47,14 @@ public class Percolation {
    public void open(int row, int col)    // open site (row, col) if it is not open already
    {
        if (!isInRange(row, col)) throw new java.lang.IllegalArgumentException();
-       matrix[row-1][col-1] = 0;
-       tryUnion(row-1,  col, row, col);
-       tryUnion(row+1,  col, row, col);
-       tryUnion(row,  col-1, row, col);
-       tryUnion(row,  col+1, row, col);
-       nOpen++;
+       if (isFull(row, col)) {
+           matrix[row-1][col-1] = 0;
+           tryUnion(row-1,  col, row, col);
+           tryUnion(row+1,  col, row, col);
+           tryUnion(row,  col-1, row, col);
+           tryUnion(row,  col+1, row, col);
+           nOpen++;
+       }
    }
    
    public boolean isOpen(int row, int col)   // is site (row, col) open?

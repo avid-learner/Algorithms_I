@@ -24,7 +24,7 @@ public class PercolationStats {
             {
                 p.open(getRandomPos(), getRandomPos());
             }
-            System.out.println(p.numberOfOpenSites());
+            #System.out.println(p.numberOfOpenSites());
             double result = p.numberOfOpenSites()/((double)(N*N));
             mean += result;
             results[i] = result;
