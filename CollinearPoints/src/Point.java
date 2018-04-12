@@ -65,6 +65,8 @@ public class Point implements Comparable<Point> {
         return (that.y - this.y)/(that.x - this.x);
     }
 
+
+
     /**
      * Compares two points by y-coordinate, breaking ties by x-coordinate.
      * Formally, the invoking point (x0, y0) is less than the argument point
@@ -78,7 +80,30 @@ public class Point implements Comparable<Point> {
      *         argument point
      */
     public int compareTo(Point that) {
+        if (this.y < that.y) return -1;
+        if (this.y > that.y) return 1;
+        if (this.x < that.x) return -1;
+        if (this.x > that.x) return 1;
         return 0;
+    }
+
+    private class PointComparator implements Comparator<Point> {
+        private Point basePoint;
+        public PointComparator(Point base) {
+            basePoint = base;
+        }
+        public int compare(Point first, Point second) {
+            double slope1 = basePoint.slopeTo(first);
+            double slope2 = basePoint.slopeTo(second);
+            if (slope1 < slope2) {
+                return -1;
+            }
+            else if (slope1 > slope2)
+            {
+                return 1;
+            }
+            else return 0;
+        }
     }
 
     /**
@@ -88,7 +113,7 @@ public class Point implements Comparable<Point> {
      * @return the Comparator that defines this ordering on points
      */
     public Comparator<Point> slopeOrder() {
-        return null;
+        return new PointComparator(this);
     }
 
 
