@@ -2,7 +2,7 @@ import edu.princeton.cs.algs4.StdIn;
 
 import java.util.NoSuchElementException;
 
-public class Permuatation {
+public class Permutation {
     public static void main(String[] args) {
         int count = Integer.valueOf(args[0]);
         RandomizedQueue<String> strings = new RandomizedQueue<>();

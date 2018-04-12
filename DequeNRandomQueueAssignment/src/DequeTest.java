@@ -1,9 +1,9 @@
 import junit.framework.TestCase;
 
-public class DequeueTest extends TestCase {
+public class DequeTest extends TestCase {
 
     public void testIterator() {
-        Dequeue<Integer> d = new Dequeue<Integer>();
+        Deque<Integer> d = new Deque<Integer>();
         d.addFirst(1);
         d.addFirst(2);
         d.addFirst(3);
@@ -19,13 +19,13 @@ public class DequeueTest extends TestCase {
     }
 
     public void testEmpyty() {
-        Dequeue<Integer> d = new Dequeue<Integer>();
+        Deque<Integer> d = new Deque<Integer>();
         assertEquals(0, d.size());
         assertEquals(true, d.isEmpty() );
     }
 
     public void testSize() {
-        Dequeue<Integer> d = new Dequeue<Integer>();
+        Deque<Integer> d = new Deque<Integer>();
         assertEquals(0, d.size());
         d.addFirst(8);
         assertEquals(1, d.size());
@@ -42,7 +42,7 @@ public class DequeueTest extends TestCase {
     }
 
     public void testAddFirst() {
-        Dequeue<Integer> d = new Dequeue<Integer>();
+        Deque<Integer> d = new Deque<Integer>();
         assertEquals(0, d.size());
         assertEquals(true, d.isEmpty() );
         d.addFirst(8);
@@ -51,7 +51,7 @@ public class DequeueTest extends TestCase {
     }
 
     public void testAddLast() {
-        Dequeue<Integer> d = new Dequeue<Integer>();
+        Deque<Integer> d = new Deque<Integer>();
         assertEquals(0, d.size());
         assertEquals(true, d.isEmpty() );
         d.addLast(8);
@@ -59,7 +59,7 @@ public class DequeueTest extends TestCase {
     }
 
     public void testRemoveFirst() {
-        Dequeue<Integer> d = new Dequeue<Integer>();
+        Deque<Integer> d = new Deque<Integer>();
         assertEquals(0, d.size());
         assertEquals(true, d.isEmpty() );
         d.addFirst(8);
@@ -86,7 +86,7 @@ public class DequeueTest extends TestCase {
     }
 
     public void testRemoveLast() {
-        Dequeue<Integer> d = new Dequeue<Integer>();
+        Deque<Integer> d = new Deque<Integer>();
         assertEquals(0, d.size());
         assertEquals(true, d.isEmpty() );
         d.addFirst(8);
